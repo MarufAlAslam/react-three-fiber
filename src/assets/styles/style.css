@@ -1,0 +1,14 @@
+.canvas-holder div {
+    min-height: 100vh;
+}
+.ant-collapse-header span {
+    color: white;
+}
+
+.anticon svg {
+    fill: white;
+}
+
+body, html {
+    overflow-x: hidden;
+}
