@@ -247,7 +247,7 @@ function App() {
   const [rotationY, setRotationY] = useState(0);
   const [rotationZ, setRotationZ] = useState(0);
 
-  console.log(selectedX, selectedY, selectedZ);
+  // console.log(selectedX, selectedY, selectedZ);
 
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -275,9 +275,10 @@ function App() {
           <Physics>
             <Plane />
             {ready &&
-              data.map((item) => {
+              data.map((item, index) => {
                 return (
                   <Cube
+                    key={index}
                     position={[
                       selectedX * Math.random() * (0.5 - 0) + 0,
                       selectedY * Math.random() * (5 - 0) + 0,

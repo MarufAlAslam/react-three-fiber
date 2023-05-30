@@ -13,9 +13,9 @@ const Scenes = ({data, selectedData, setSelectedData, setResult}) => {
       <p className="text-white">Scene Collection</p>
       <Collapse bordered={false} defaultActiveKey={["1"]}>
         <Panel header="Collection" key="1">
-          <p className="text-white">
+          <div className="text-white">
             <Top data={data} setSelectedData={setSelectedData} />
-          </p>
+          </div>
         </Panel>
       </Collapse>
     </>

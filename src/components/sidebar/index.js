@@ -83,7 +83,7 @@ const Sidebar = ({data, setSelectedX, setSelectedY, setSelectedZ, setRotationX, 
 
   useEffect(() => {
     setResult(data[selectedData-1]);
-    console.log("selectedData", data[selectedData-1]);
+    // console.log("selectedData", data[selectedData-1]);
     setSelectedX(parseInt(data[selectedData-1].locations[0].value)/100)
     setSelectedY(parseInt(data[selectedData-1].locations[1].value)/10)
     setSelectedZ(parseInt(data[selectedData-1].locations[2].value)/100)
