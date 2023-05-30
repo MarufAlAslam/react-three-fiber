@@ -251,7 +251,7 @@ function App() {
 
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    const timeout = setTimeout(() => setReady(true), 100);
+    const timeout = setTimeout(() => setReady(true), 1);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -271,10 +271,25 @@ function App() {
             position={[10, 10, 5]}
             castShadow
           />
+
           <Physics>
             <Plane />
-            {/* {ready && <Cube position={[selectedX, selectedY, selectedZ]} />} */}
-            {ready && <Cube rotation={[rotationX, rotationY, rotationZ]} position={[selectedX, selectedY, selectedZ]} />}
+            {ready &&
+              data.map((item) => {
+                return (
+                  <Cube
+                    position={[
+                      selectedX * Math.random() * (0.5 - 0) + 0,
+                      selectedY * Math.random() * (5 - 0) + 0,
+                      selectedZ * Math.random() * (1 - 0) + 0,
+
+                      rotationX * Math.random() * (0.5 - 0) + 0,
+                      rotationY * Math.random() * (0.5 - 0) + 0,
+                      rotationZ * Math.random() * (0.5 - 0) + 0,
+                    ]}
+                  />
+                );
+              })}
           </Physics>
         </Canvas>
       </div>
@@ -283,7 +298,6 @@ function App() {
         setSelectedX={setSelectedX}
         setSelectedY={setSelectedY}
         setSelectedZ={setSelectedZ}
-
         setRotationX={setRotationX}
         setRotationY={setRotationY}
         setRotationZ={setRotationZ}
