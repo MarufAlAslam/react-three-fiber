@@ -8,12 +8,15 @@ const Selected = ({result}) => {
 
   console.log(result);
 
+  if(result.element){
+    console.log(result.element);
+  }
+
   // click on lock icon only make disabled the sibling input
   // click on dot icon only make enabled the sibling input
 
   const handleLock = () => {
     setLocked(!locked);
-    
   };
 
   return (

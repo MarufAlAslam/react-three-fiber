@@ -22,10 +22,10 @@ function Cube(props) {
   )
 }
 
-export default function Main() {
-  const [ready, set] = useState(false)
+export default function Main({ selectedX, selectedY, selectedZ}) {
+  const [ready, setReady] = useState(false)
   useEffect(() => {
-    const timeout = setTimeout(() => set(true), 1000)
+    const timeout = setTimeout(() => setReady(true), 100)
     return () => clearTimeout(timeout)
   }, [])
   return (
@@ -34,10 +34,8 @@ export default function Main() {
       <spotLight angle={0.25} penumbra={0.5} position={[10, 10, 5]} castShadow />
       <Physics>
         <Plane />
-        <Cube position={[0, 5, 0]} />
-        <Cube position={[0.45, 7, -0.25]} />
-        <Cube position={[-0.45, 9, 0.25]} />
-        {ready && <Cube position={[-0.45, 10, 0.25]} />}
+        {/* {ready && <Cube position={[selectedX, selectedY, selectedZ]} />} */}
+        {ready && <Cube position={[selectedX, selectedY, selectedZ]} />}
       </Physics>
     </Canvas>
   )

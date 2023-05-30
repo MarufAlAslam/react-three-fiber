@@ -3,6 +3,7 @@ import React from "react";
 const Top = ({ data, setSelectedData }) => {
     const handleButtonClicked = (id) => {
         setSelectedData(id)
+        
     }
   return (
     <div className="pl-7">
